@@ -41,13 +41,15 @@ git status
 git push --set-upstream origin master
 
 PARA ACTUALIZAR CAMBIOS EN REPOSITORIO
+git remote -v //muestra repositorios del proyecto
 
 git init 
 git branch
 git add .   
 git commit -m "2DA version de Neorelatos Crud python flask sql js OK"
-git push -u origin segunda_version
-git pull origin segunda_version
+git push -u origin neoRelatos_v2
+
+git pull origin neoRelatos
 
 PARA IGNORAR CARPETA 
     crear archivo .gitignore
