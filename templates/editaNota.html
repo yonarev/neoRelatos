@@ -1,0 +1,9 @@
+
+<form action="/update/{{ nota.0 }}" method="POST">
+    <input type="text" id="idBit" name="idBit" placeholder="id" value="{{ nota.0 }}" disabled>
+    <input type="text" id="fecha" name="fecha" placeholder="fecha" value="{{ nota.1 }}" disabled>
+    <input type="text" id="hora" name="hora" placeholder="hora" value="{{ nota.2 }}" disabled>
+    <input type="text" id="titulo" name="titulo" placeholder="titulo" value="{{ nota.3 }}">
+    <input type="text" id="nota" name="nota" placeholder="nota" value="{{ nota.4 }}">
+    <button type="submit">Grabar</button>
+</form>

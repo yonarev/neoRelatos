@@ -1,0 +1,64 @@
+tutorial 
+    https://www.youtube.com/watch?v=IgCfZkR8wME&t=143s
+flask
+    https://flask.palletsprojects.com/en/2.0.x/
+mysqldb
+   https://pypi.org/project/Flask-MySQLdb/
+
+python -m venv venv
+venv\Scripts\activate
+python.exe -m pip install --upgrade pip
+pip3 install flask
+pip3 install Flask-mysqldb
+pip list
+python app.py
+    ver http://127.0.0.1:3000
+    localhost:3000
+conexion a bd 
+CREATE TABLE `bitacora` (
+  `idBit` varchar(50) NOT NULL,
+  `fecha` varchar(20) NOT NULL,
+  `hora` varchar(20) NOT NULL,
+  `titulo` varchar(50) NOT NULL, //1 titulo n notas
+  `nota` text NOT NULL //1 nota a 1 titulo
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+puden haber varias notas para un titulo
+    
+para limpieza navegador cache
+ctrl shift r o ctrl f5 
+
+
+CREABNDO REPO GIT 
+https://github.com/yonarev/
+en git neoRelatos
+git.init
+git remote add origin https://github.com/yonarev/neoRelatos.git
+git add .
+
+LS MAGOS DEL LA CALLE 
+Neorelatos Incidentales 
+una coleccion de titulos de desarrollo 
+con n notascada linea es un archivo de audio 
+y una archivo de texto asociado 
+
+AUDIOS MP3
+al grabar el audio se graba un registro  
+en nombre del archivo es relatoId.mp3 
+
+DESPLIEGUE 
+La web pinta una lista de titulos 
+asociada a algunas notas de desarrollo 
+y a un archivo de audio reproducido al click
+
+EL AUDIO 
+puede ser la conversa asociada 
+la transcripcion de la conversa
+o el sonido ambiente inhedito del registro 
+
+IMAGINERIA 
+la imagineria es una coleccion de 
+parafraseos entre letras 
+juegos de palabras 
+palabrerio pajaronimo 
+
+

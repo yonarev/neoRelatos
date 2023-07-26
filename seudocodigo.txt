@@ -1,0 +1,22 @@
+idAhora
+codigo de python de una funcion llamada idAhora()
+que retorne en base a la fecha (en formato dd/mm/yyyy) 
+y hora actual (en formato hh:mm:ss)  
+retorne un string sin"/" y sin ":"
+osea si la fecha es 23/12/2023 y la hora es 09:01:23 
+entonces el retorno seria "23122023090123" 
+tener encuenta que fecha y hora el formato en decimal 
+osea si la hora es 9:1:23 etonces es 090123 
+lo mismo para la fecha 
+
+fechaAhora
+codigo de python de una funcion llamada fechaAhora()
+que retorne la fecha en formato dd/mm/yyyy
+tener encuenta que fecha y hora el formato en decimal 
+osea si la fecha es 3/2/2023 el retorno seria 03/02/2023
+
+horaAhora()
+codigo de python de una funcion llamada horaAhora()
+que retorne la hora en formato hh:mm:ss
+tener encuenta que la hora es formato en decimal 
+osea si la fecha 3:3:3 el retorno seria 03:03:03

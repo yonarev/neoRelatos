@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoRelatos</title>
+</head>
+<body>
+    <form action="/addNota" method="POST">
+        <input type="text" id="titulo" name="titulo" placeholder="titulo">
+        <input type="text" id="nota" name="nota" placeholder="nota">
+        <button type="submit">Grabar Nueva Nota</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <table>
+        <thead>
+            <tr>
+                <td>idBit</td>
+                <td>fecha</td>
+                <td>hora</td>
+                <td>titulo</td>
+                <td>nota</td>
+                <td>Operaciones</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nota in notas %}
+            <tr>
+                <td>{{ nota.0 }}</td>
+                <td>{{ nota.1 }}</td>
+                <td>{{ nota.2 }}</td>
+                <td>{{ nota.3 }}</td>
+                <td>{{ nota.4 }}</td>
+                <td>
+                    <a href="/edit/{{ nota.0 }}">Edita</a>
+                    <a href="/delete/{{ nota.0 }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
