@@ -1,50 +1,101 @@
+{% extends 'layout.html' %}
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoRelatos</title>
-</head>
-<body>
-    <form action="/addNota" method="POST">
-        <input type="text" id="titulo" name="titulo" placeholder="titulo">
-        <input type="text" id="nota" name="nota" placeholder="nota">
-        <button type="submit">Grabar Nueva Nota</button>
-    </form>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <p>{{ message }}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-    <table>
-        <thead>
-            <tr>
-                <td>idBit</td>
-                <td>fecha</td>
-                <td>hora</td>
-                <td>titulo</td>
-                <td>nota</td>
-                <td>Operaciones</td>
-            </tr>
-        </thead>
-        <tbody>
-            {% for nota in notas %}
-            <tr>
-                <td>{{ nota.0 }}</td>
-                <td>{{ nota.1 }}</td>
-                <td>{{ nota.2 }}</td>
-                <td>{{ nota.3 }}</td>
-                <td>{{ nota.4 }}</td>
-                <td>
-                    <a href="/edit/{{ nota.0 }}">Edita</a>
-                    <a href="/delete/{{ nota.0 }}">Eliminar</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+{% block body %}
+    <div class="row">       
+        <!-- aqui formulario -->
+        <!-- <div class="col-md-5"> -->
+        <div>
+            {% with messages = get_flashed_messages() %} 
+                {% if messages %}
+                    {% for message in messages %}
+                        <!-- <p>{{ message }}</p> -->
+                        <div id="liveAlertPlaceholder">
+                            <div></div>
+                            <div><div class="alert alert-success alert-dismissible" role="alert">   
+                            <div>{{ message }}</div>   
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div></div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <div class="car card-body">
+                <style>
+                    #nota {
+                        width: 80vw; /* 50% del ancho de la ventana */
+                        height: 35vw; /* 50% de la altura de la ventana */
+                    }
+                </style>
+                <form action="/addNota" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="titulo" name="titulo" placeholder="titulo">
+                    </div>
+                    <div class="form-group">
+                        <!-- <input class="form-control" type="text" id="nota" name="nota" placeholder="nota"> -->
+                        <textarea id="nota" name="nota" placeholder="nota"></textarea>
+                    </div>  
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Grabar Nueva Nota</button>
+                    </div>  
+                </form> 
+            </div>
+        </div>
+        <!-- aqui la tabla -->
+        <!-- <div class="col-md-7"> -->
+        <div>
+            <style>
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+                th, td {
+                    border: 1px solid #dddddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+                /* Establecer el alto máximo solo para el div interno en la columna 'nota' */
+                td .nota-content {
+                    max-height: 3vw; /* Ajusta el valor según tus necesidades */
+                    overflow: auto;
+                }
+            </style>
+            <!-- <table class="table table-striped table-bordered bg-white table-sm" > -->
+            <table>
+                <thead>
+                    <tr>
+                        <td>idBit</td>
+                        <td>fecha</td>
+                        <td>hora</td>
+                        <td>titulo</td>
+                        <td>nota</td>
+                        <td>Edicion</td>
+                        <td>Eliminacion</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for nota in notas %}
+                        <tr>
+                            <td>{{ nota.0 }}</td>
+                            <td>{{ nota.1 }}</td>
+                            <td>{{ nota.2 }}</td>
+                            <td>{{ nota.3 }}</td>
+                            <!-- <td style="max-height: 100px;overflow: hidden">{{ nota.4 }}</td> -->
+                            <td>
+                                <div class="nota-content">{{ nota.4 }}</div>
+                            </td>
+                            <td>
+                                <a href="/edit/{{ nota.0 }}" class="btn btn-secondary">Edita</a>
+                            </td>
+                            <td>
+                                <a href="/delete/{{ nota.0 }}" class="btn btn-danger btnDelete" data-id="{{ nota.0 }}">Eliminar</a>
+                                <!-- <a href="/delete/{{ nota.0 }}"class="btn btn-denger btnDelete" >Eliminar</a> -->
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+{% endblock %}

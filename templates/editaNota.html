@@ -1,9 +1,32 @@
-
-<form action="/update/{{ nota.0 }}" method="POST">
-    <input type="text" id="idBit" name="idBit" placeholder="id" value="{{ nota.0 }}" disabled>
-    <input type="text" id="fecha" name="fecha" placeholder="fecha" value="{{ nota.1 }}" disabled>
-    <input type="text" id="hora" name="hora" placeholder="hora" value="{{ nota.2 }}" disabled>
-    <input type="text" id="titulo" name="titulo" placeholder="titulo" value="{{ nota.3 }}">
-    <input type="text" id="nota" name="nota" placeholder="nota" value="{{ nota.4 }}">
-    <button type="submit">Grabar</button>
-</form>
+{% extends 'layout.html' %}
+{% block body %}
+<div class="col-md offset-md">
+    <div class="car card-body">
+        <style>
+            #nota {
+                width: 80vw; /* 50% del ancho de la ventana */
+                height: 35vw; /* 50% de la altura de la ventana */
+            }
+            #titulo{
+                width: 80vw; 
+            }
+        </style>
+        <form action="/update/{{ nota.0 }}" method="POST">
+            <div class="form-group">
+                <input type="text" id="idBit" name="idBit" placeholder="id" value="{{ nota.0 }}" disabled>
+                <input type="text" id="fecha" name="fecha" placeholder="fecha" value="{{ nota.1 }}" disabled>
+                <input type="text" id="hora" name="hora" placeholder="hora" value="{{ nota.2 }}" disabled>
+            </div>
+            <div class="form-group">
+                <input type="text" id="titulo" name="titulo" placeholder="titulo" value="{{ nota.3 }}">
+            </div>
+            <div class="form-group">
+                <!-- <input type="text" id="nota" name="nota" placeholder="nota" value="{{ nota.4 }}"> -->
+                <textarea id="nota" name="nota" placeholder="nota">{{ nota.4 }}</textarea>
+            </div>
+            
+            <button type="submit">Grabar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

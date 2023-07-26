@@ -27,15 +27,53 @@ puden haber varias notas para un titulo
 para limpieza navegador cache
 ctrl shift r o ctrl f5 
 
+SOBRE LIBRERIA 'MODULOS' 
+https://www.youtube.com/watch?v=hWbD_6xhYe0
 
-CREABNDO REPO GIT 
+CREANDO REPO GIT 
 https://github.com/yonarev/
 en git neoRelatos
 git.init
 git remote add origin https://github.com/yonarev/neoRelatos.git
 git add .
+git commit -m "Primer envio de codigo en python flask sql"
+git status
+git push --set-upstream origin master
 
-LS MAGOS DEL LA CALLE 
+PARA ACTUALIZAR CAMBIOS EN REPOSITORIO
+git branch
+git add .   
+git commit -m "Descripción de los cambios realizados"
+git push -u origin nombre_de_la_nueva_rama
+git pull origin nombre_de_la_nueva_rama
+
+PARA IGNORAR CARPETA 
+    crear archivo .gitignore
+        gitignore
+    editar archivo para ignorar esta carpeta
+        bootstrap/ 
+    actualizar repo 
+        git add .gitignore
+        git commit -m "Agregado archivo .gitignore para ignorar carpeta bootstrap/"
+    otra forma es para dejar de restrear carpeta 
+        git rm -r --cached carpeta_a_ignorar/
+        git commit -m "Eliminar carpeta_a_ignorar del repositorio"    
+
+OCUPANDO BOOTSTRAP
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+    LINKS 
+        bajo tittle
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        final de body
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+https://bootswatch.com/
+
+
+GRADIENTES 
+https://uigradients.com/#Purpink
+
+LOS MAGOS DEL LA CALLE 
 Neorelatos Incidentales 
 una coleccion de titulos de desarrollo 
 con n notascada linea es un archivo de audio 

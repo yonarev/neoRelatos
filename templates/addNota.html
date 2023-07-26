@@ -1,9 +1,19 @@
-<form action="/addNota" method='POST'>
-    <input type="text" id="idBit" name="idBit" placeholder="id">
-    <input type="text" id="fecha" name="fecha" placeholder="fecha">
-    <input type="text" id="hora" name="hora" placeholder="hora">
-    <input type="text" id="titulo" name="titulo" placeholder="titulo">
-    <input type="text" id="nota" name="nota" placeholder="nota">
-    <button type="submit">Grabar</button>
-    <input type="submit" name="Grabar">
-</form>
+{% extends 'layout.html' %}
+{% block body %}
+    <style>
+        #nota {
+            width: 50vw; /* 50% del ancho de la ventana */
+            height: 50vw; /* 50% de la altura de la ventana */
+        }
+    </style>
+    <form action="/addNota" method='POST'>
+        <input type="text" id="idBit" name="idBit" placeholder="id">
+        <input type="text" id="fecha" name="fecha" placeholder="fecha">
+        <input type="text" id="hora" name="hora" placeholder="hora">
+        <input type="text" id="titulo" name="titulo" placeholder="titulo">
+        <!-- <input type="text" id="nota" name="nota" placeholder="nota"> -->
+        <textarea id="nota" name="nota" placeholder="nota"></textarea>
+        <button type="submit">Grabar</button>
+        <input type="submit" name="Grabar">
+    </form>
+{% endblock %}

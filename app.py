@@ -75,8 +75,14 @@ def deleteNota(id):
     cur.execute('DELETE FROM bitacora WHERE idBit=%s', (id,))
     mysql.connection.commit()
     flash('Nota eliminada con ID: {}'.format(id))
-    return redirect(url_for('index'))
+    return redirect(url_for('index')) 
 
+# EDICION POR TITULOS
+# localhost:3000/titulos
+@app.route("/titulos") 
+def edicionPorTitulos():
+    return render_template('edicionPorTitulos.html')
+    
 # VALIDA SI ES ARCHIVO PPAL 
 if __name__ == '__main__':
     app.run(port=3000,debug=True)
