@@ -43,7 +43,7 @@ git push --set-upstream origin master
 PARA ACTUALIZAR CAMBIOS EN REPOSITORIO
 git remote -v //muestra repositorios del proyecto
 
-git init 
+git init //no estoy seguro 
 git branch
 git add .   
 git commit -m "2DA version de Neorelatos Crud python flask sql js OK"
@@ -77,6 +77,36 @@ https://bootswatch.com/
 GRADIENTES 
 https://uigradients.com/#Purpink
 
+
+SUBIENDO A SERVIDOR
+https://www.pythonanywhere.com/user/janveravidela/webapps/#tab_id_new_webapp_tab
+https://www.youtube.com/watch?v=TU3UefE8NPo
+janveravidela.pythonanywhere.com.
+    US: 
+        jorgeveravidela@gmail.com
+    PASS:(para git y server) para ingreso y sql
+        sinomino sin tentar con money
+    PATH 
+        /home/janveravidela/mysite/flask_app.py
+    DIRECCION 
+        https://janveravidela.pythonanywhere.com/
+    SUBIR 
+        source code ..go to directory
+    BD 
+        Database host address:janveravidela.mysql.pythonanywhere-services.com
+                      Username:janveravidela
+        Your databases:
+                      janveravidela$default
+                      janveravidela$q
+        Database name: q   
+            CREATE TABLE `bitacora` (
+            `idBit` varchar(50) NOT NULL,
+            `fecha` varchar(20) NOT NULL,
+            `hora` varchar(20) NOT NULL,
+            `titulo` varchar(50) NOT NULL,
+            `nota` text NOT NULL
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;   
+                    
 LOS MAGOS DEL LA CALLE 
 Neorelatos Incidentales 
 una coleccion de titulos de desarrollo 
